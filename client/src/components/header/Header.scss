@@ -11,11 +11,14 @@
 .top-header {
 	&__inner {
 		display: grid;
-		grid-template-columns: 1fr auto 1fr 1fr;
+		grid-template-columns: 190px auto auto 75px;
 	}
-	&__contact a {
-		@include flex;
-		align-items: center;
+	&__contact {
+		@include center;
+		& a {
+			@include flex;
+			align-items: center;
+		}
 	}
 	&__contactIcon,
 	&__user,
