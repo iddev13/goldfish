@@ -1,0 +1,71 @@
+@import "../../index.scss";
+
+.header {
+	&__top {
+		padding: 21px 0;
+		background: $black;
+	}
+	&__body {
+	}
+}
+.top-header {
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr 1fr;
+	}
+	&__contact a {
+		@include flex;
+		align-items: center;
+	}
+	&__contactIcon,
+	&__user,
+	&__cart {
+		display: inline-block;
+		width: 28px;
+		height: 28px;
+		position: relative;
+		@media (min-width: 1024px) {
+			&:hover svg {
+				fill: $gray;
+			}
+		}
+		& svg {
+			fill: $white;
+			transition: all 0.3s ease;
+		}
+	}
+	&__contactIcon {
+		& svg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+	}
+	&__contactNumber {
+		display: inline-block;
+		font-family: "TrebuchetBold";
+		font-style: normal;
+		font-size: 20px;
+		line-height: 23px;
+		color: $white;
+		transition: all 0.3s ease;
+		@media (min-width: 1024px) {
+			&:hover {
+				color: $gray;
+			}
+		}
+	}
+	&__actions {
+		margin-left: auto;
+		& div:not(:last-child) {
+			margin-right: 15px;
+		}
+	}
+	&__user {
+	}
+	&__cart {
+	}
+}

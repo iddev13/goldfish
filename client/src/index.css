@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "TrebuchetRegular";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local("Limelight"), url("./fonts/TrebuchetMS.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TrebuchetBold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local("Limelight"), url("./fonts/TrebuchetMS-Bold.woff") format("woff");
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -107,7 +123,7 @@ h6 {
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -121,10 +137,10 @@ h6 {
 
 body {
   margin: 0;
-  font-family: "ManropeRegular", sans-serif;
+  font-family: "TrebuchetRegular", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000;
+  color: #2a2a2a;
   background-color: #e5e5e5;
   height: 100%;
   width: 100%;
@@ -143,24 +159,4 @@ code {
 ul,
 ol {
   list-style: none;
-}
-
-/* Слайдер */
-.slick-slider {
-  min-width: 0;
-}
-/* Ограничивающая оболочка */
-.slick-list {
-  overflow: hidden;
-}
-/* Лента слайдов */
-.slick-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /*    -webkit-box-align: start;*/
-  /*    -ms-flex-align: start;*/
-  /*    display: block; Для ветикального слайдера*/
-  /*    align-items: flex-start;*/
-  /*align-items: flex-start; для свойства adaptiveHeight: true    */
 }
