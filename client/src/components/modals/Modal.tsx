@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { makeStyles } from '@material-ui/styles';
-import { padding } from "@mui/system";
+import CloseBtn from "./CloseBtn";
 
 type PropsType = {
 	modalActive: boolean,
@@ -30,14 +30,6 @@ const useStyles = makeStyles((theme?: any) => ({
 	},
 	body: {
 		position: 'relative',
-	},
-	close: {
-		width: 30,
-		height: 30,
-		position: 'absolute',
-		top: 15,
-		right: 15,
-		zIndex: 1
 	}
 }));
 
@@ -50,10 +42,7 @@ const Modal: FC<PropsType> = ({ modalActive, setModalActive, children }) => {
 	return (
 		<div className={modalActive ? classes.enable : classes.disable}>
 			<div className={classes.body}>{children}</div>
-			<button
-				className={classes.close}
-				onClick={closeModal}
-			>X</button>
+			<CloseBtn closeModal={closeModal} />
 		</div>
 	)
 }

@@ -9,6 +9,10 @@ const useStyles = makeStyles((theme?: any) => ({
 		position: 'relative',
 		border: '2px solid #D9D9D9',
 		borderRadius: '50%',
+		transition: 'all 0.3s ease',
+		'&:hover': {
+			borderColor: 'orange',
+		},
 		'& svg': {
 			width: '50%',
 			height: '50%',
