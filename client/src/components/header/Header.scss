@@ -63,11 +63,9 @@
 	}
 	&__actions {
 		margin-left: auto;
-		& div:not(:last-child) {
-			margin-right: 15px;
-		}
 	}
 	&__user {
+		margin-right: 15px;
 	}
 	&__cart {
 	}

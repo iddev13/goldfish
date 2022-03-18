@@ -1,0 +1,90 @@
+@import "../../index.scss";
+
+.auth {
+	max-width: 430px;
+	width: 100%;
+	background: $white;
+	box-shadow: 5px 6px 16px rgba(42, 42, 42, 0.16);
+	border-radius: 9px;
+	padding: 40px;
+	&__inner {
+		@include flex;
+		flex-direction: column;
+	}
+	&__header {
+	}
+	&__title {
+		font-family: "TrebuchetBold", sans-serif;
+		font-size: 22px;
+		line-height: 26px;
+		color: $black;
+		margin: 0px 0px 25px 0px;
+	}
+	&__headerList {
+		@include flex;
+		justify-content: space-between;
+		& li {
+			display: block;
+			text-transform: capitalize;
+			text-align: center;
+			width: 100%;
+		}
+	}
+	&__headerLink {
+		font-family: "TrebuchetBold", sans-serif;
+		font-size: 19px;
+		line-height: 22px;
+		color: $black;
+	}
+	&__body {
+	}
+	&__footer {
+	}
+	&__footerBtn {
+		max-width: 274px;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+.bodyAuth {
+	&__forgotPassword {
+		text-align: right;
+		margin: 0px 0px 29px 0px;
+		& a {
+			font-family: "TrebuchetRegular", sans-serif;
+			font-size: 15px;
+			line-height: 91.1%;
+			color: $black;
+			margin-left: auto;
+		}
+	}
+	&__enterSms {
+		display: inline-block;
+		font-family: "TrebuchetBold", sans-serif;
+		font-size: 18px;
+		line-height: 21px;
+		color: $black;
+		border-bottom: 2px solid #f9a43f;
+		padding: 0px 0px 3px 0px;
+		margin: 0px 0px 2px 0px;
+	}
+	&__enterSocialNetwork {
+		font-size: 18px;
+		line-height: 21px;
+		margin: 0px 0px 12px 0px;
+	}
+	&__enterSociaList {
+		@include flex;
+		margin: 12px 0px 26px 0px;
+	}
+	&__enterSocialIcon {
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+	}
+}
+
+.formAuth {
+	&__item {
+	}
+}

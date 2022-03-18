@@ -96,6 +96,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: 400;
+  font-style: normal;
 }
 
 /* CLASSES ======================== */
@@ -138,7 +139,7 @@ h6 {
 body {
   margin: 0;
   font-family: "TrebuchetRegular", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
   color: #2a2a2a;
   background-color: #e5e5e5;
@@ -146,7 +147,7 @@ body {
   width: 100%;
   font-size: 100%;
   line-height: 1;
-  font-size: 14px;
+  font-size: 16px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

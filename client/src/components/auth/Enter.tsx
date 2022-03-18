@@ -1,6 +1,12 @@
 import { FC } from "react"
 import { Field, reduxForm, reset } from "redux-form"
+import AuthSocialLink from "../authSocialIcon/AuthSocialLink";
+import AuthSocialIcon from "../authSocialIcon/AuthSocialLink";
+import ActiveButton from "../buttons/ActiveButton"
 import { Input } from "../form-controls/form-controls"
+import Facebook2 from "../sprite/Facebook2";
+import Vk2 from "../sprite/Vk2";
+import './Auth.scss';
 
 const afterSubmit = (result: any, dispatch: any) => {
 	dispatch(reset('login'))
@@ -11,13 +17,13 @@ const Enter: FC = () => {
 		<article className="auth">
 			<div className="auth__inner">
 				<div className="auth__header">
-					<h2>Войдите или зарегистрируйтесь</h2>
-					<ul>
-						<li>вход</li>
-						<li>регистрация</li>
+					<h2 className="auth__title">Войдите или зарегистрируйтесь</h2>
+					<ul className="auth__headerList">
+						<li><a href="#" className="auth__headerLink">вход</a></li>
+						<li><a href="#" className="auth__headerLink">регистрация</a></li>
 					</ul>
 				</div>
-				<div className="auth__body">
+				<div className="auth__body bodyAuth">
 					<form action="/" className="auth__form formAuth">
 						<div className="formAuth__item">
 							<label htmlFor="loginEmail">email</label>
@@ -26,11 +32,39 @@ const Enter: FC = () => {
 								type="email"
 								id="loginEmail"
 								component={Input}
+								placeholder="e-mail"
+							/>
+						</div>
+						<div className="formAuth__item">
+							<label htmlFor="loginPassword">пароль</label>
+							<Field
+								name="password"
+								type="password"
+								id="loginPassword"
+								component={Input}
+								placeholder="пароль"
 							/>
 						</div>
 					</form>
+					<div className="bodyAuth__forgotPassword"><a href="#">Забыли пароль?</a></div>
+					<p className="bodyAuth__enterSms">Войти с помщью SMS подтверждения</p>
+					<div className="bodyAuth__enterSocialNetwork">
+						<p>Войти через аккаунт социальной сети</p>
+						<ul className="bodyAuth__enterSociaList">
+							<li className="bodyAuth__enterSocialIcon">
+								<AuthSocialLink><Facebook2 /></AuthSocialLink>
+							</li>
+							<li className="bodyAuth__enterSocialIcon">
+								<AuthSocialLink><Vk2 /></AuthSocialLink>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div className="auth__footer"></div>
+				<div className="auth__footer">
+					<div className="auth__footerBtn">
+						<ActiveButton>Войти</ActiveButton>
+					</div>
+				</div>
 			</div>
 		</article>
 	)
