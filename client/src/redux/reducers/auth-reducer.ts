@@ -37,4 +37,12 @@ export const actionsAuth = {
 	},
 }
 
+export const LoginTC = (formData: any): ThunkAction<Promise<void>, AppStateType, unknown, ActionsType> => {
+	return async (dispatch) => {
+		console.log('LoginTC', formData);
+
+	}
+}
+
+
 export default authReducer;

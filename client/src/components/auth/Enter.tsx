@@ -12,7 +12,11 @@ const afterSubmit = (result: any, dispatch: any) => {
 	dispatch(reset('login'))
 }
 
-const Enter: FC = () => {
+type PropsTypes = {
+	handleSubmit: any
+}
+
+const Enter: FC<PropsTypes> = ({ handleSubmit }) => {
 	return (
 		<article className="auth">
 			<div className="auth__inner">
@@ -24,7 +28,7 @@ const Enter: FC = () => {
 					</ul>
 				</div>
 				<div className="auth__body bodyAuth">
-					<form action="/" className="auth__form formAuth">
+					<form onSubmit={handleSubmit} className="auth__form formAuth">
 						<div className="formAuth__item">
 							<label htmlFor="loginEmail">email</label>
 							<Field
@@ -45,25 +49,27 @@ const Enter: FC = () => {
 								placeholder="пароль"
 							/>
 						</div>
+
+						<div className="bodyAuth__forgotPassword"><a href="#">Забыли пароль?</a></div>
+						<p className="bodyAuth__enterSms">Войти с помщью SMS подтверждения</p>
+						<div className="bodyAuth__enterSocialNetwork">
+							<p>Войти через аккаунт социальной сети</p>
+							<ul className="bodyAuth__enterSociaList">
+								<li className="bodyAuth__enterSocialIcon">
+									<AuthSocialLink><Facebook2 /></AuthSocialLink>
+								</li>
+								<li className="bodyAuth__enterSocialIcon">
+									<AuthSocialLink><Vk2 /></AuthSocialLink>
+								</li>
+							</ul>
+						</div>
+
+						<div className="auth__Btn">
+							<ActiveButton>Войти</ActiveButton>
+						</div>
+
 					</form>
-					<div className="bodyAuth__forgotPassword"><a href="#">Забыли пароль?</a></div>
-					<p className="bodyAuth__enterSms">Войти с помщью SMS подтверждения</p>
-					<div className="bodyAuth__enterSocialNetwork">
-						<p>Войти через аккаунт социальной сети</p>
-						<ul className="bodyAuth__enterSociaList">
-							<li className="bodyAuth__enterSocialIcon">
-								<AuthSocialLink><Facebook2 /></AuthSocialLink>
-							</li>
-							<li className="bodyAuth__enterSocialIcon">
-								<AuthSocialLink><Vk2 /></AuthSocialLink>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div className="auth__footer">
-					<div className="auth__footerBtn">
-						<ActiveButton>Войти</ActiveButton>
-					</div>
+
 				</div>
 			</div>
 		</article>
