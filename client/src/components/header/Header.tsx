@@ -1,6 +1,8 @@
 import { FC, useState } from 'react'
 import { useWindowSize } from '../../hook/useWindowSize'
+import { HeaderNavType } from '../../redux/reducers/header-reducer'
 import LoginContainer from '../auth/LoginContainer'
+import Nav from './Nav'
 import Modal from '../modals/Modal'
 import Search from '../search/Search'
 import CartIcon from '../sprite/CartIcon'
@@ -9,8 +11,11 @@ import UserIcon from '../sprite/UserIcon'
 import './Header.scss'
 import Logo from './Logo'
 
+type PropsTypes = {
+	links: Array<HeaderNavType>
+}
 
-const Header: FC = () => {
+const Header: FC<PropsTypes> = ({ links }) => {
 
 	const size: any = useWindowSize()
 	const [modalActive, setModalActive] = useState<boolean>(false);
@@ -48,7 +53,9 @@ const Header: FC = () => {
 			</div>
 			<div className="header__body">
 				<div className="container">
-					
+					<div className="header__bodyInner">
+						<Nav links={links} />
+					</div>
 				</div>
 			</div>
 		</header>

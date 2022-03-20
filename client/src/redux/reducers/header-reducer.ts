@@ -1,8 +1,9 @@
 import { InferActionsTypes } from './../store';
 
-type HeaderNavType = {
+export type HeaderNavType = {
 	id: number
 	name: string
+	path: string
 }
 
 type InitialStateType = {
@@ -11,11 +12,11 @@ type InitialStateType = {
 
 let initialState: InitialStateType = {
 	links: [
-		{ id: 1, name: 'Wharhammer' },
-		{ id: 2, name: 'Magic:the Cathering' },
-		{ id: 3, name: 'Мероприятия' },
-		{ id: 4, name: 'О центре' },
-		{ id: 5, name: 'Контакты' },
+		{ id: 1, name: 'Wharhammer', path: '#' },
+		{ id: 2, name: 'Magic:the Cathering', path: '#' },
+		{ id: 3, name: 'Мероприятия', path: '#' },
+		{ id: 4, name: 'О центре', path: '#' },
+		{ id: 5, name: 'Контакты', path: '#' },
 	]
 }
 

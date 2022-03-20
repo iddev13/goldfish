@@ -1,0 +1,14 @@
+@import "../../index.scss";
+
+.catalogNav {
+	flex: 0 0 150px;
+	font-family: "TrebuchetBold";
+	line-height: 19px;
+	&__btn {
+		font-family: "TrebuchetBold";
+		font-size: 16px;
+		color: $black;
+		background: transparent;
+		text-transform: capitalize;
+	}
+}

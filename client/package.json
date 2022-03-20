@@ -17,6 +17,8 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/redux-form": "^8.3.3",
     "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "jwt-decode": "^3.1.2",
     "node-sass": "^7.0.1",
     "object-fit-images": "^3.2.4",
     "react": "^17.0.2",

@@ -1,19 +1,28 @@
 import { FC } from "react";
+import Facebook from "../sprite/Facebook";
+import Instagram from "../sprite/Instagram";
+import Vk from "../sprite/Vk";
+import Catalog from "./Calalog";
 
-const Nav: FC = () => {
+const Navigation: FC<any> = ({ links }) => {
 	return (
-		<nav className="header__nav navHeader">
-			<ul className="navHeader__list">
-				<li>
-					<div className="navHeader__catalog"></div>
-				</li>
-				<li><a href="#"></a></li>
+		<nav className="header__nav nav">
+			<Catalog />
+			<ul className="nav__list">
+				{links.map((elem: any) => {
+					return <li className="nav__item" key={elem.id}>
+						<a href={elem.path} className="nav__link">
+							{elem.name}
+						</a></li>
+				})}
 			</ul>
-			<ul className="navHeader__socialList">
-				
+			<ul className="nav__socialList">
+				<li className="nav__socialItem"><a href="#"><Instagram /></a></li>
+				<li className="nav__socialItem"><a href="#"><Vk /></a></li>
+				<li className="nav__socialItem"><a href="#"><Facebook /></a></li>
 			</ul>
 		</nav>
 	)
 }
 
-export default Nav
+export default Navigation

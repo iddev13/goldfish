@@ -5,12 +5,44 @@ import { getAuthAuthText, getAuthIsAuthenticated } from "../../redux/selectors/a
 import { LoginTC } from '../../redux/reducers/auth-reducer'
 import { AppStateType } from "../../redux/store"
 import EnterRedux from "./Enter"
+import { login, registration } from "../../api/userApi"
 
 const LoginContainerRedux: FC<any> = ({ isAuthenticated, LoginTC, ...props }) => {
 
-	const formData = (formData: any) => {
+	// const click = async () => {
+	// 	try {
+	// 		let data;
+	// 		if (isLogin) {
+	// 			data = await login(email, password);
+	// 		} else {
+	// 			data = await registration(email, password);
+	// 		}
+	// 		user.setUser(user)
+	// 		user.setIsAuth(true)
+	// 		history.push(SHOP_ROUTE)
+	// 	} catch (e) {
+	// 		alert(e.response.data.message)
+	// 	}
+
+	// }
+	const isLogin = false
+
+	const formData = async (formData: any) => {
 		console.log('LogiFormData', formData);
-		LoginTC(formData)
+		try {
+			// LoginTC(formData)
+			let data;
+			if (isAuthenticated) {
+				data = await login(formData.email, formData.password);
+				console.log(data);
+			} else {
+				data = await registration(formData.email, formData.password);
+				console.log(data);
+			}
+
+		} catch (error:any) {
+			alert(error.response.data.message)
+		}
 	}
 
 	return (
@@ -19,8 +51,10 @@ const LoginContainerRedux: FC<any> = ({ isAuthenticated, LoginTC, ...props }) =>
 }
 
 let mapStateToProps = (state: AppStateType) => {
-	isAuthenticated: getAuthIsAuthenticated(state)
-	authText: getAuthAuthText(state)
+	return {
+		isAuthenticated: getAuthIsAuthenticated(state),
+		authText: getAuthAuthText(state)
+	}
 }
 
 const LoginContainer = connect(mapStateToProps, {

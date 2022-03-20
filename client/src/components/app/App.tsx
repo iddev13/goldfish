@@ -1,12 +1,12 @@
 import Footer from '../footer/Footer';
-import Header from '../header/Header';
+import { HeaderContainer } from '../header/HeaderContainer';
 import Main from '../main/Main';
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <HeaderContainer />
       <Main />
       <Footer />
     </div>

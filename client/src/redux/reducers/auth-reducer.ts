@@ -1,3 +1,4 @@
+import { getProducts } from './../../api/api';
 import { ThunkAction } from 'redux-thunk'
 import { AppStateType, InferActionsTypes } from './../store';
 
@@ -39,8 +40,14 @@ export const actionsAuth = {
 
 export const LoginTC = (formData: any): ThunkAction<Promise<void>, AppStateType, unknown, ActionsType> => {
 	return async (dispatch) => {
-		console.log('LoginTC', formData);
+		try {
+			console.log('LoginTC', formData);
+			let data = await getProducts()
+			console.log('data', data);
+		} catch (error) {
+			console.log("Error", error);
 
+		}
 	}
 }
 
