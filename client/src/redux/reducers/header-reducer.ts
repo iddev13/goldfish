@@ -7,10 +7,16 @@ export type HeaderNavType = {
 }
 
 type InitialStateType = {
+	userLinks: Array<HeaderNavType>
 	links: Array<HeaderNavType>
 }
 
 let initialState: InitialStateType = {
+	userLinks: [
+		{ id: 1, name: 'Профиль', path: '#' },
+		{ id: 2, name: 'Настройки', path: '#' },
+		{ id: 3, name: 'Другое', path: '#' },
+	],
 	links: [
 		{ id: 1, name: 'Wharhammer', path: '#' },
 		{ id: 2, name: 'Magic:the Cathering', path: '#' },

@@ -64,6 +64,8 @@
 	}
 	&__actions {
 		margin-left: auto;
+		@include flex;
+		align-items: center;
 	}
 	&__user {
 		margin-right: 15px;

@@ -10,12 +10,10 @@ import PhoneIcon from '../sprite/PhoneIcon'
 import UserIcon from '../sprite/UserIcon'
 import './Header.scss'
 import Logo from './Logo'
+import AccountMenu from '../accountMenu/AccountMenu'
+import { HeaderContainerPropsType } from './HeaderContainer'
 
-type PropsTypes = {
-	links: Array<HeaderNavType>
-}
-
-const Header: FC<PropsTypes> = ({ links }) => {
+const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticated, logOut }) => {
 
 	const size: any = useWindowSize()
 	const [modalActive, setModalActive] = useState<boolean>(false);
@@ -37,7 +35,13 @@ const Header: FC<PropsTypes> = ({ links }) => {
 						</div>
 						<div className="top-header__actions">
 							<div className="top-header__user">
-								<a href="#" onClick={() => setModalActive(true)}><UserIcon /></a>
+								{
+									IsAuthenticated
+										? <AccountMenu
+											logOut={logOut} />
+										: <a href="#"
+											onClick={() => setModalActive(true)}><UserIcon /></a>
+								}
 								<Modal
 									modalActive={modalActive}
 									setModalActive={setModalActive}>

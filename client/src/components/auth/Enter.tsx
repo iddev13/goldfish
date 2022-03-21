@@ -23,7 +23,7 @@ const Enter: FC<PropsTypes> = ({ handleSubmit }) => {
 				<div className="auth__header">
 					<h2 className="auth__title">Войдите или зарегистрируйтесь</h2>
 					<ul className="auth__headerList">
-						<li><a href="#" className="auth__headerLink">вход</a></li>
+						<li><a href="#" className="auth__headerLink auth__headerLink--active">вход</a></li>
 						<li><a href="#" className="auth__headerLink">регистрация</a></li>
 					</ul>
 				</div>

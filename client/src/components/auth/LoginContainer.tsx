@@ -9,23 +9,6 @@ import { login, registration } from "../../api/userApi"
 
 const LoginContainerRedux: FC<any> = ({ isAuthenticated, LoginTC, ...props }) => {
 
-	// const click = async () => {
-	// 	try {
-	// 		let data;
-	// 		if (isLogin) {
-	// 			data = await login(email, password);
-	// 		} else {
-	// 			data = await registration(email, password);
-	// 		}
-	// 		user.setUser(user)
-	// 		user.setIsAuth(true)
-	// 		history.push(SHOP_ROUTE)
-	// 	} catch (e) {
-	// 		alert(e.response.data.message)
-	// 	}
-
-	// }
-	const isLogin = false
 
 	const formData = async (formData: any) => {
 		console.log('LogiFormData', formData);
