@@ -23,7 +23,7 @@ type MapStateToProps = {
 }
 
 type MapDispatchToProps = {
-	logOut: () => void
+	logOutAC: () => void
 }
 type OwnProps = {}
 
@@ -38,7 +38,7 @@ let mapStateToProps = (state: AppStateType) => {
 }
 
 let mapDispatchToProps: MapDispatchToProps = {
-	logOut: actionsAuth.logOut
+	logOutAC: actionsAuth.logOutAC
 }
 
 export const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header)

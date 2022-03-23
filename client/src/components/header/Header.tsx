@@ -13,7 +13,7 @@ import Logo from './Logo'
 import AccountMenu from '../accountMenu/AccountMenu'
 import { HeaderContainerPropsType } from './HeaderContainer'
 
-const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticated, logOut }) => {
+const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticated, logOutAC }) => {
 
 	const size: any = useWindowSize()
 	const [modalActive, setModalActive] = useState<boolean>(false);
@@ -38,7 +38,7 @@ const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticate
 								{
 									IsAuthenticated
 										? <AccountMenu
-											logOut={logOut} />
+											logOutAC={logOutAC} />
 										: <a href="#"
 											onClick={() => setModalActive(true)}><UserIcon /></a>
 								}

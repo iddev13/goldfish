@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Field, reduxForm, reset } from "redux-form"
+import { Field, InjectedFormProps, reduxForm, reset } from "redux-form"
 import AuthSocialLink from "../authSocialIcon/AuthSocialLink";
 import AuthSocialIcon from "../authSocialIcon/AuthSocialLink";
 import ActiveButton from "../buttons/ActiveButton"
@@ -14,9 +14,12 @@ const afterSubmit = (result: any, dispatch: any) => {
 
 type PropsTypes = {
 	handleSubmit: any
+	token: any
 }
 
-const Enter: FC<PropsTypes> = ({ handleSubmit }) => {
+const Enter = ({ handleSubmit }: InjectedFormProps, token: string) => {
+	console.log('Enter Component token', token);
+
 	return (
 		<article className="auth">
 			<div className="auth__inner">

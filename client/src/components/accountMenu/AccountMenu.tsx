@@ -13,7 +13,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
 type PropsTypes = {
-	logOut: any
+	logOutAC: any
 }
 
 export default function AccountMenu(props: PropsTypes) {
@@ -27,7 +27,7 @@ export default function AccountMenu(props: PropsTypes) {
 	};
 
 	const logOutFunc = () => {
-		props.logOut()
+		props.logOutAC()
 	}
 
 	return (

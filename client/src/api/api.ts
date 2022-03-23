@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { storageName } from '../redux/reducers/auth-reducer'
 
 const $host = axios.create({
 	baseURL: process.env.REACT_APP_API_URL
@@ -20,7 +21,7 @@ export const getProducts = () => {
 }
 
 const authInterceptor = (config: any) => {
-	config.headers.authorization = `Bearer ${localStorage.getItem('token')}`
+	config.headers.authorization = `Bearer ${localStorage.getItem(storageName)}`
 	return config
 }
 
