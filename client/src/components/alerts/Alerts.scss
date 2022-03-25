@@ -1,0 +1,10 @@
+@import "../../index.scss";
+
+.alert {
+	display: inline-block;
+	// max-width: 300px;
+	// width: 100%;
+	position: fixed;
+	top: 30px;
+	right: 30px;
+}

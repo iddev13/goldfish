@@ -4,8 +4,8 @@ import { actionsAuth } from "../../redux/reducers/auth-reducer"
 import { getAuthAuthText, getAuthIsAuthenticated, getAuthToken } from "../../redux/selectors/auth-selector"
 import { LoginTC } from '../../redux/reducers/auth-reducer'
 import { AppStateType } from "../../redux/store"
-import EnterRedux from "./Enter"
-import { login, registration } from "../../api/userApi"
+import LoginRedux from "./Enter"
+// import { Redirect } from "react-router-dom"
 
 const LoginContainerRedux: FC<any> = ({ isAuthenticated, loginAC, LoginTC,
 	token, ...props }) => {
@@ -13,13 +13,10 @@ const LoginContainerRedux: FC<any> = ({ isAuthenticated, loginAC, LoginTC,
 
 	useEffect(() => {
 		console.log(isAuthenticated);
-
-
 	}, [])
 
 	const formData = async (formData: any) => {
 		console.log('LogiFormData', formData);
-
 		try {
 			LoginTC(formData)
 		} catch (error: any) {
@@ -28,7 +25,13 @@ const LoginContainerRedux: FC<any> = ({ isAuthenticated, loginAC, LoginTC,
 	}
 
 	return (
-		<EnterRedux {...props} onSubmit={formData} token={token} />
+		// <div>{
+		// 	isAuthenticated
+		// 		? <Redirect to="/" />
+		// 		: <LoginRedux {...props} onSubmit={formData} token={token}
+		// 	}
+		// </div>
+		<LoginRedux {...props} onSubmit={formData} token={token} />
 	)
 }
 

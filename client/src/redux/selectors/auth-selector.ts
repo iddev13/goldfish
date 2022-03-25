@@ -11,3 +11,7 @@ export const getAuthIsAuthenticated = (state: AppStateType) => {
 export const getAuthAuthText = (state: AppStateType) => {
 	return state.auth.authText
 }
+
+export const getAuthStatusCode = (state: AppStateType) => {
+	return state.auth.authStatus
+}

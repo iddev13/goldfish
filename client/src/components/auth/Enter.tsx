@@ -17,10 +17,12 @@ type PropsTypes = {
 	token: any
 }
 
-const Enter = ({ handleSubmit }: InjectedFormProps, token: string) => {
-	console.log('Enter Component token', token);
+
+
+const Login = ({ handleSubmit }: InjectedFormProps, token: string) => {
 
 	return (
+
 		<article className="auth">
 			<div className="auth__inner">
 				<div className="auth__header">
@@ -79,6 +81,6 @@ const Enter = ({ handleSubmit }: InjectedFormProps, token: string) => {
 	)
 }
 
-const EnterRedux = reduxForm({ form: 'login', onSubmitSuccess: afterSubmit })(Enter)
+const LoginRedux = reduxForm({ form: 'login', onSubmitSuccess: afterSubmit })(Login)
 
-export default EnterRedux
+export default LoginRedux

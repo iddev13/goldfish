@@ -10,10 +10,12 @@ export const registration = async (email: string, password: string) => {
 }
 
 export const login = async (email: string, password: string) => {
+	const fullData = await $host.post('api/user/login', { email, password })
+	console.log('Работает Login fullData', fullData);
+
 	const { data } = await $host.post('api/user/login', { email, password })
 	console.log('Работает Login', data);
 	localStorage.setItem(storageName, JSON.stringify({ userId: data.id, token: data.token }))
-	// return jwt_decode(data.token)
 	return JSON.stringify({ userId: data.id, token: jwt_decode(data.token) })
 }
 
