@@ -124,6 +124,13 @@
 
 .formAuth {
 	&__item {
+		position: relative;
 		margin: 0px 0px 16px 0px;
+	}
+	&itemInfo {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }

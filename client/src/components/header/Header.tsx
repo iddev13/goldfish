@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import { useWindowSize } from '../../hook/useWindowSize'
 import { HeaderNavType } from '../../redux/reducers/header-reducer'
-import LoginContainer from '../auth/LoginContainer'
+import LoginContainer from '../auth/AuthContainer'
 import Nav from './Nav'
 import Modal from '../modals/Modal'
 import Search from '../search/Search'
@@ -12,6 +12,7 @@ import './Header.scss'
 import Logo from './Logo'
 import AccountMenu from '../accountMenu/AccountMenu'
 import { HeaderContainerPropsType } from './HeaderContainer'
+import BurgerContainer from '../burger/BurgerContainer'
 
 const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticated, logOutAC }) => {
 
@@ -58,6 +59,7 @@ const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticate
 			<div className="header__body">
 				<div className="container">
 					<div className="header__bodyInner">
+						<BurgerContainer />
 						<Nav links={links} />
 					</div>
 				</div>

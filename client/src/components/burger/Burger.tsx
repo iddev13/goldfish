@@ -1,9 +1,17 @@
 import { FC } from "react";
 import './Burger.scss'
 
-const Burger: FC = () => {
+type PropsType = {
+	burgerFunc: () => void
+}
+
+const Burger: React.FC<PropsType> = ({ burgerFunc }) => {
 	return (
-		<div className="burger">Burger</div>
+		<div onClick={burgerFunc} className="burger">
+			<span className="burger-top"></span>
+			<span className="burger-center"></span>
+			<span className="burger-bottom"></span>
+		</div>
 	)
 }
 

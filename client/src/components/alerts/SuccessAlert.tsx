@@ -9,15 +9,13 @@ type PropsTypes = {
 
 const SuccessAlert: FC<PropsTypes> = ({ authText, authStatusCode, ...props }) => {
 
+	const content = authStatusCode >= 400
+		? <Alert variant="filled" severity="error">{authText}</Alert>
+		: <Alert variant="filled" severity="success">{authText}</Alert>
+
 	return (
 		<div className="alert">
-			{
-				authStatusCode >= 500
-					? <Alert variant="filled" severity="error">{authText}</Alert>
-					: <Alert variant="filled" severity="success">{authText}</Alert>
-			}
-
-
+			{authText ? content : ''}
 		</div>
 	)
 }

@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { Field, InjectedFormProps, reduxForm, reset } from "redux-form"
 import AuthSocialLink from "../authSocialIcon/AuthSocialLink";
-import AuthSocialIcon from "../authSocialIcon/AuthSocialLink";
 import ActiveButton from "../buttons/ActiveButton"
 import { Input } from "../form-controls/form-controls"
 import Facebook2 from "../sprite/Facebook2";
@@ -17,9 +16,12 @@ type PropsTypes = {
 	token: any
 }
 
+const Login = ({ handleSubmit }: InjectedFormProps, setIsLogin: any) => {
 
-
-const Login = ({ handleSubmit }: InjectedFormProps, token: string) => {
+	const hanleIsLogin = (event: any) => {
+		event.preventDefault()
+		setIsLogin(false)
+	}
 
 	return (
 
@@ -28,8 +30,8 @@ const Login = ({ handleSubmit }: InjectedFormProps, token: string) => {
 				<div className="auth__header">
 					<h2 className="auth__title">Войдите или зарегистрируйтесь</h2>
 					<ul className="auth__headerList">
-						<li><a href="#" className="auth__headerLink auth__headerLink--active">вход</a></li>
-						<li><a href="#" className="auth__headerLink">регистрация</a></li>
+						<li><a className="auth__headerLink auth__headerLink--active" onClick={hanleIsLogin}>вход</a></li>
+						<li><a className="auth__headerLink" onClick={hanleIsLogin}>регистрация</a></li>
 					</ul>
 				</div>
 				<div className="auth__body bodyAuth">
