@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme?: any) => ({
 	disable: {
 		visibility: 'hidden',
 		opacity: 0,
-		position: 'absolute',
+		position: 'fixed',
+		top: 0,
+		left: '100%'
 	},
 	body: {
 		position: 'relative',

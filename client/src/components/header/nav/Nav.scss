@@ -1,0 +1,85 @@
+@import "../../../index.scss";
+
+.nav {
+	@include flex;
+	&__list {
+		flex: 1 1 auto;
+		@include flex;
+		justify-content: space-around;
+		@media (max-width: 768px) {
+			position: fixed;
+			top: -100%;
+			left: 0;
+			z-index: 2;
+			width:80%;
+			height: 100%;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			background-color: $white;
+			overflow: auto;
+			padding-top: 20px;
+			transition: all 0.3s ease;
+			& li {
+				display: block;
+				width: 100%;
+				margin: 0px 0px 20px 0px;
+				padding: 0px 0px 0px 30px;
+				// @media (max-width: 768px) {
+				// 	&:active {
+				// 		background-color: $orange1;
+				// 	}
+				// }
+			}
+		}
+	}
+	&__item {
+		& a {
+			display: inline-block;
+			font-family: "TrebuchetBold";
+			font-size: 16px;
+			line-height: 19px;
+			color: $black;
+			transition: color 0.3s ease;
+			position: relative;
+			@media (min-width: 1024px) {
+				&:hover {
+					color: $orange1;
+				}
+			}
+		}
+	}
+	&__socialList {
+		@include flex;
+	}
+	&__socialItem {
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+		& a {
+			display: inline-block;
+			width: 23px;
+			height: 23px;
+			position: relative;
+			@media (min-width: 1024px) {
+				&:hover svg {
+					transform: translate(0, -3px);
+				}
+			}
+		}
+		& svg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			fill: transparent;
+			transition: transform 0.3s ease;
+		}
+	}
+}
+
+.burger-toggle.active {
+	top: 0;
+}

@@ -4,7 +4,7 @@ import { actionsAuth } from "../../redux/reducers/auth-reducer"
 import { getAuthAuthText, getAuthIsAuthenticated, getAuthIsLogin, getAuthToken } from "../../redux/selectors/auth-selector"
 import { LoginTC } from '../../redux/reducers/auth-reducer'
 import { AppStateType } from "../../redux/store"
-import LoginRedux from "./Enter"
+import LoginRedux from "./Login"
 import RegistrationRedux from "./Registration"
 // import { Redirect } from "react-router-dom"
 
@@ -29,7 +29,9 @@ const LoginContainerRedux: FC<any> = ({ isAuthenticated, loginAC, LoginTC, isLog
 
 	return (
 		<>
-			{isLogin ? loginComponent : registrationComponent}
+		sd
+			{loginComponent}
+			{/* {isLogin ? loginComponent : registrationComponent} */}
 		</>
 	)
 }

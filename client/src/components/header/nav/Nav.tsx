@@ -1,14 +1,16 @@
 import { FC } from "react";
-import Facebook from "../sprite/Facebook";
-import Instagram from "../sprite/Instagram";
-import Vk from "../sprite/Vk";
-import Catalog from "./Calalog";
+import Facebook from "../../sprite/Facebook";
+import Instagram from "../../sprite/Instagram";
+import Vk from "../../sprite/Vk";
+import Catalog from "../header-catalog/Calalog";
+import './Nav.scss'
 
 const Navigation: FC<any> = ({ links }) => {
+
 	return (
 		<nav className="header__nav nav">
 			<Catalog />
-			<ul className="nav__list">
+			<ul className="nav__list burger-toggle">
 				{links.map((elem: any) => {
 					return <li className="nav__item" key={elem.id}>
 						<a href={elem.path} className="nav__link">

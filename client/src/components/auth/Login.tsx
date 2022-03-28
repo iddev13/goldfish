@@ -11,11 +11,6 @@ const afterSubmit = (result: any, dispatch: any) => {
 	dispatch(reset('login'))
 }
 
-type PropsTypes = {
-	handleSubmit: any
-	token: any
-}
-
 const Login = ({ handleSubmit }: InjectedFormProps, setIsLogin: any) => {
 
 	const hanleIsLogin = (event: any) => {

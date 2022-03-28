@@ -1,15 +1,14 @@
 import { FC, useState } from 'react'
 import { useWindowSize } from '../../hook/useWindowSize'
-import { HeaderNavType } from '../../redux/reducers/header-reducer'
-import LoginContainer from '../auth/AuthContainer'
-import Nav from './Nav'
+import AuthContainer from '../auth/AuthContainer'
+import Nav from './nav/Nav'
 import Modal from '../modals/Modal'
 import Search from '../search/Search'
 import CartIcon from '../sprite/CartIcon'
 import PhoneIcon from '../sprite/PhoneIcon'
 import UserIcon from '../sprite/UserIcon'
 import './Header.scss'
-import Logo from './Logo'
+import Logo from './logo/Logo'
 import AccountMenu from '../accountMenu/AccountMenu'
 import { HeaderContainerPropsType } from './HeaderContainer'
 import BurgerContainer from '../burger/BurgerContainer'
@@ -24,8 +23,12 @@ const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticate
 			<div className="header__top top-header">
 				<div className="container">
 					<div className="top-header__inner">
-						<Logo />
-						<Search />
+						<div className="top-header__logo">
+							<Logo />
+						</div>
+						<div className="top-header__search">
+							<Search />
+						</div>
 						<div className="top-header__contact">
 							<a href="tel:+7(495)9111011">
 								<span className="top-header__contactIcon">
@@ -46,8 +49,9 @@ const Header: FC<HeaderContainerPropsType> = ({ userLinks, links, IsAuthenticate
 								<Modal
 									modalActive={modalActive}
 									setModalActive={setModalActive}>
-									<LoginContainer />
+									<AuthContainer />
 								</Modal>
+
 							</div>
 							<div className="top-header__cart">
 								<a href="#"><CartIcon /></a>
