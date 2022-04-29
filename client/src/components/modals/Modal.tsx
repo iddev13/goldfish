@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/styles';
 import CloseBtn from "./CloseBtn";
 
 type PropsType = {
-	modalActive: boolean,
-	setModalActive: (v: boolean) => void,
+	modalActive?: boolean,
+	setModalActive?: any,
 	children: any
 }
 
@@ -36,13 +36,34 @@ const useStyles = makeStyles((theme?: any) => ({
 }));
 
 const Modal: FC<PropsType> = ({ modalActive, setModalActive, children }) => {
+
+
 	const classes = useStyles()
 
+	let modals = document.querySelectorAll('.modal')
+	console.log(modals);
+
+	const body = document.querySelector('body')
+	body?.addEventListener('click', (event: any) => {
+		if (!event.target.closest('modal')) {
+			// setModalActive(false)
+		}
+	})
+
+	// modals.forEach((elem: any) => {
+
+	// 	elem.addEventListener("click", function (event: any) {
+	// 		if (!event.target.closest('.popup__content')) {
+	// 			elem(event.target.closest('.popup'));
+	// 		}
+	// 	})
+	// })
+
 	const closeModal = () => {
-		setModalActive(false)
+		// setModalActive(false)
 	}
 	return (
-		<div className={modalActive ? classes.enable : classes.disable}>
+		<div className={`modal ${modalActive ? classes.enable : classes.disable}`}>
 			<div className={classes.body}>{children}</div>
 			<CloseBtn closeModal={closeModal} />
 		</div>

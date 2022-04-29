@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme?: any) => ({
 		width: 157,
 		height: 37,
 		'@media (max-width: 550px)': {
-			width: 107,
+			width: 97,
 			height: 30,
 		},
 	},

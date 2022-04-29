@@ -1,0 +1,118 @@
+.containerFluid {
+  width: 100%;
+  max-width: containerFluid;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #009661;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #35a10a;
+}
+
+@-webkit-keyframes show__header {
+  0% {
+    opacity: 0;
+    top: -200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes show__header {
+  0% {
+    opacity: 0;
+    top: -200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.formControl.error input,
+.formControl.error textarea {
+  border-bottom: 1px solid red;
+  -webkit-box-shadow: 0px 2px 1px -1px red;
+          box-shadow: 0px 2px 1px -1px red;
+}
+
+.formControl {
+  position: relative;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formControl.error span {
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  right: 0;
+  color: red;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+
+.formControl__item {
+  position: relative;
+  max-width: 418px;
+  width: 100%;
+}
+
+.formControl__itemTextarea {
+  position: relative;
+  max-width: 660px;
+  width: 100%;
+}
+
+.formControl__item input,
+.formControl__itemTextarea textarea {
+  width: inherit;
+  background: #ffffff;
+  border: 1px solid rgba(42, 42, 42, 0.38);
+  border-radius: 9px;
+}
+
+.formControl__item input {
+  display: block;
+  height: 50px;
+  position: relative;
+  padding: 16px 20px;
+}
+
+.formControl__item input:focus {
+  border: 1px solid #4fbb65;
+}
+
+.formControl__item textarea {
+  resize: vertical;
+}

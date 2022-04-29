@@ -4,12 +4,14 @@ import { reducer as formReducer } from "redux-form";
 import thunkMiddleware from 'redux-thunk';
 import authReducer from "./reducers/auth-reducer";
 import headerReducer from "./reducers/header-reducer";
+import productsReducer from "./reducers/products-reducer";
 
 
 let rootReducer = combineReducers({
 	form: formReducer,
 	auth: authReducer,
 	header: headerReducer,
+	products: productsReducer,
 })
 
 // For reducers

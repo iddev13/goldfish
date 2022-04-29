@@ -29,7 +29,6 @@ const LoginContainerRedux: FC<any> = ({ isAuthenticated, loginAC, LoginTC, isLog
 
 	return (
 		<>
-		sd
 			{loginComponent}
 			{/* {isLogin ? loginComponent : registrationComponent} */}
 		</>

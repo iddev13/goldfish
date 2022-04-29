@@ -1,14 +1,188 @@
 @import "../../../index.scss";
 
-.catalogNav {
+.catalog-nav {
 	flex: 0 0 80px;
 	font-family: "TrebuchetBold";
 	line-height: 19px;
+	&__header {
+		@include flex;
+	}
+	&__title,
+	&__name {
+		& button, a {
+			font-family: "TrebuchetBold";
+			font-size: 16px;
+			line-height: 19px;
+			display: inline-block;
+			text-transform: capitalize;
+			background: transparent;
+			color: $black;
+		}
+	}
 	&__btn {
+		position: relative;
+		z-index: 101;
+		width: 25px;
+		height: 18px;
+		cursor: pointer;
+		border-radius: 3px;
+		margin: 0px 10px 0px 0px;
+		background: transparent;
+		@media (max-width: 950px) {
+			display: block;
+		}
+		& span {
+			position: absolute;
+			background-color: $black;
+			left: 0;
+			z-index: 101;
+			width: 100%;
+			height: 2px;
+			transition: all 0.3s ease;
+			border-radius: 3px;
+		}
+		&-top {
+			top: 0;
+		}
+		&-center {
+			top: 8px;
+		}
+		&-bottom {
+			bottom: 0;
+		}
+	}
+	&__body {
+		position: relative;
+		@include adaptiv-value('width', 1110, 280,0 );
+		background: #fffbf8;
+		box-shadow: 5px 6px 15px rgba(251, 121, 27, 0.63);
+		@include flex;
+	}
+	&__name {
+		@include flex;
+		align-items: center;
+		padding: 0 30px 5px;
+		border-bottom: 2px solid rgba(42, 42, 42, 0.26);
+
+		& a {
+			margin: 16px 18px 13px;
+		}
+	}
+	&__close {
+		display: inline-flex;
+		width: 15px;
+		height: 15px;
+		background: transparent;
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #222;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: 1;
+			transform: rotate(45deg);
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #222;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: 1;
+			transform: rotate(-45deg);
+		}
+	}
+	&__menu {
+		& > li {
+		}
+	}
+	
+}
+
+.catalog-left{
+	flex: 0 0 255px;
+	border-right: 2px solid rgba(42, 42, 42, 0.26);
+}
+.catalog-right {
+	flex: 1 1 auto;
+}
+
+.menu {
+	& li {
+		padding: 10px;
+	}
+	&__link {
+		display: inline-block;
+		width: 100%;
 		font-family: "TrebuchetBold";
 		font-size: 16px;
-		color: $black;
-		background: transparent;
-		text-transform: capitalize;
+		line-height: 1.1;
+		color: black;
+		padding: 15px 30px;
+		position: relative;
+		&::before,&::after{
+			content: '';
+			display: block;
+			width: 8px;
+			height: 2px;
+			position: absolute;
+			background: #222;
+			border-radius: 2px;
+			left:calc(100% - 20px);
+			z-index: 1;
+		}
+		  &::before {
+			top: 20px;
+			transform: rotate(45deg);
+			}
+			&::after {
+			top: 25px;
+			transform: rotate(-45deg);
+			}
+	}
+}
+
+.sub-menu{
+		position: absolute;
+		top: 0;
+		left: 235px;
+		padding: 0 30px;
+	&__list {
+		@include flex;
+		flex-wrap: wrap;
+		padding: 8px 0;
+		& > li {
+			flex: 0 1 33.33333%;
+		}
+	}
+	&__link {
+		display: inline-block;
+		width: 100%;
+		font-family: "TrebuchetBold";
+		font-size: 16px;
+		line-height: 1.1;
+		color: black;
+		padding: 15px 0;
+	}
+	&__title{
+		font-family: 'TrebuchetBold';
+		font-size: 20px;
+		line-height: 23px;
+		color: inherit;
+		margin: 16px 0px 7px;
+	}
+}
+
+body.mouse .catalog-nav__title button {
+	transition: all 0.3s ease;
+	&:hover {
+		color: $orange1;
 	}
 }

@@ -1,0 +1,288 @@
+.containerFluid {
+  width: 100%;
+  max-width: containerFluid;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #009661;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #35a10a;
+}
+
+@-webkit-keyframes show__header {
+  0% {
+    opacity: 0;
+    top: -200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes show__header {
+  0% {
+    opacity: 0;
+    top: -200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.catalog-nav {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+          flex: 0 0 80px;
+  font-family: "TrebuchetBold";
+  line-height: 19px;
+}
+
+.catalog-nav__header {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+.catalog-nav__title button, .catalog-nav__title a, .catalog-nav__name button, .catalog-nav__name a {
+  font-family: "TrebuchetBold";
+  font-size: 16px;
+  line-height: 19px;
+  display: inline-block;
+  text-transform: capitalize;
+  background: transparent;
+  color: #2a2a2a;
+}
+
+.catalog-nav__btn {
+  position: relative;
+  z-index: 101;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 0px 10px 0px 0px;
+  background: transparent;
+}
+
+@media (max-width: 950px) {
+  .catalog-nav__btn {
+    display: block;
+  }
+}
+
+.catalog-nav__btn span {
+  position: absolute;
+  background-color: #2a2a2a;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+  height: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.catalog-nav__btn-top {
+  top: 0;
+}
+
+.catalog-nav__btn-center {
+  top: 8px;
+}
+
+.catalog-nav__btn-bottom {
+  bottom: 0;
+}
+
+.catalog-nav__body {
+  position: relative;
+  width: calc(280px + 830 * ((100vw - 320px) / 1600));
+  background: #fffbf8;
+  -webkit-box-shadow: 5px 6px 15px rgba(251, 121, 27, 0.63);
+          box-shadow: 5px 6px 15px rgba(251, 121, 27, 0.63);
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+.catalog-nav__name {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30px 5px;
+  border-bottom: 2px solid rgba(42, 42, 42, 0.26);
+}
+
+.catalog-nav__name a {
+  margin: 16px 18px 13px;
+}
+
+.catalog-nav__close {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  position: relative;
+}
+
+.catalog-nav__close::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #222;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.catalog-nav__close::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #222;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.catalog-left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 255px;
+          flex: 0 0 255px;
+  border-right: 2px solid rgba(42, 42, 42, 0.26);
+}
+
+.catalog-right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu__link {
+  display: inline-block;
+  width: 100%;
+  font-family: "TrebuchetBold";
+  font-size: 16px;
+  line-height: 1.1;
+  color: black;
+  padding: 15px 30px;
+  position: relative;
+}
+
+.menu__link::before, .menu__link::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 2px;
+  position: absolute;
+  background: #222;
+  border-radius: 2px;
+  left: calc(100% - 20px);
+  z-index: 1;
+}
+
+.menu__link::before {
+  top: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.menu__link::after {
+  top: 25px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.sub-menu {
+  position: absolute;
+  top: 0;
+  left: 235px;
+  padding: 0 30px;
+}
+
+.sub-menu__list {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.sub-menu__list > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.33333%;
+          flex: 0 1 33.33333%;
+}
+
+.sub-menu__link {
+  display: inline-block;
+  width: 100%;
+  font-family: "TrebuchetBold";
+  font-size: 16px;
+  line-height: 1.1;
+  color: black;
+  padding: 15px 0;
+}
+
+.sub-menu__title {
+  font-family: 'TrebuchetBold';
+  font-size: 20px;
+  line-height: 23px;
+  color: inherit;
+  margin: 16px 0px 7px;
+}
+
+body.mouse .catalog-nav__title button {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body.mouse .catalog-nav__title button:hover {
+  color: #F9A43F;
+}
